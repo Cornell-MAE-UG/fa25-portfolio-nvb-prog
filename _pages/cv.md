@@ -1,6 +1,6 @@
 ---
 layout: default
-title: <Your Name> - Curriculum Vitae
+title: Nitish Bhamidipati - Curriculum Vitae
 permalink: /cv/
 ---
 ## Curriculum Vitae
