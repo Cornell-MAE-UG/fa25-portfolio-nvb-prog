@@ -17,7 +17,7 @@ baseurl                  : "fa25-portfolio-nvb-prog" # Set this to your repo nam
 
 # Theme and Style
 theme: jekyll-theme-minimal
-color_scheme: light # light/default, dark, or aqua
+color_scheme: dark # light/default, dark, or aqua
 
 sass:
   style: compressed
