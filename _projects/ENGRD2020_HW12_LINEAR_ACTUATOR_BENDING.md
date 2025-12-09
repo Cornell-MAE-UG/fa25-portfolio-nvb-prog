@@ -97,34 +97,26 @@ The following assumptions were used in the beam analysis:
 - The beam is modeled as a **cantilever**, fixed at the ground-mounted pivot and loaded at its free end.  
 - Only **transverse load components** relative to the beam axis are considered.  
 - The beam length is fixed at **1.0 m**, consistent with Part 1.  
-- The combined actuator and load effects are conservatively represented as a single equivalent transverse point load \( F_\perp \).  
+- The combined actuator and load effects are conservatively represented as a single equivalent transverse point load, denoted \(F_\perp\).  
 - The beam material is structural steel with:
-  \[
-  E = 200 \,\text{GPa}, \quad \rho = 7850 \,\text{kg/m}^3.
-  \]
+  - Elastic modulus: **E = 200 GPa**  
+  - Density: **ρ = 7850 kg/m³**
 
 ### Maximum Deflection Analysis
 
-For a cantilever beam subjected to a transverse point load at its free end, the maximum vertical deflection occurs at the tip and is given by:
+For a cantilever beam subjected to a transverse point load at its free end, the maximum vertical deflection at the tip is given by:
 
-\[
-\delta_\text{max} = \frac{F_\perp L^3}{3 E I},
-\]
+`δ_max = (F_perp * L^3) / (3 * E * I)`
 
-where \(I\) is the second moment of area of the beam cross-section.
+where **I** is the second moment of area of the beam cross-section.
 
-The design requirement specifies that the vertical deflection must be **less than 2% of the beam length**, resulting in an allowable deflection of:
+The design requirement specifies that the vertical deflection must be **less than 2% of the beam length**, giving an allowable deflection of:
 
-\[
-\delta_\text{allow} = 0.02L = 0.02 \,\text{m}.
-\]
+`δ_allow = 0.02 * L = 0.02 m`
 
 Rearranging the deflection equation yields the minimum required second moment of area:
 
-\[
-I_\text{req} = \frac{F_\perp L^3}{3 E \delta_\text{allow}}
-             \approx 3.3 \times 10^{-6} \,\text{m}^4.
-\]
+`I_req = (F_perp * L^3) / (3 * E * δ_allow) ≈ 3.3 × 10⁻⁶ m⁴`
 
 Any beam cross-section with a second moment of area greater than this value satisfies the deflection constraint.
 
@@ -132,13 +124,10 @@ Any beam cross-section with a second moment of area greater than this value sati
 
 To meet the deflection requirement while minimizing mass, rectangular hollow steel sections were evaluated. These sections are efficient in bending because stiffness scales strongly with section height while mass scales linearly with cross-sectional area.
 
-For a rectangular hollow section with outer width \(b\), outer height \(h\), and wall thickness \(t\), the second moment of area and cross-sectional area are given by:
+For a rectangular hollow section with outer width **b**, outer height **h**, and wall thickness **t**, the second moment of area and cross-sectional area are:
 
-\[
-I = \frac{b h^3 - (b-2t)(h-2t)^3}{12},
-\quad
-A = b h - (b-2t)(h-2t).
-\]
+- `I = [b * h^3 − (b − 2t) * (h − 2t)^3] / 12`  
+- `A = b * h − (b − 2t) * (h − 2t)`
 
 Candidate beam sizes were evaluated using Python, and all sections satisfying the deflection criterion were identified. Among these candidates, the beam with the **smallest cross-sectional area** was selected to minimize mass.
 
@@ -146,22 +135,15 @@ The most mass-efficient beam meeting the deflection limit was a:
 
 **60 mm × 150 mm × 3 mm rectangular hollow steel section**, oriented with the **150 mm dimension vertical**.
 
-For this selected section:
+For this section:
 
-- Second moment of area:  
-  \( I \approx 3.44 \times 10^{-6} \,\text{m}^4 \)  
-- Cross-sectional area:  
-  \( A \approx 1.224 \times 10^{-3} \,\text{m}^2 \)  
-- Mass per unit length:  
-  \( \approx 9.6 \,\text{kg/m} \)
+- Second moment of area: `I ≈ 3.44 × 10⁻⁶ m⁴`  
+- Cross-sectional area: `A ≈ 1.224 × 10⁻³ m²`  
+- Mass per unit length: `≈ 9.6 kg/m`
 
 The resulting maximum vertical deflection is:
 
-\[
-\delta_\text{max}
-= \frac{F_\perp L^3}{3 E I}
-\approx 0.0194 \,\text{m},
-\]
+`δ_max ≈ 0.0194 m`
 
 which corresponds to **1.94% of the beam length**, satisfying the design requirement.
 
@@ -177,4 +159,5 @@ The final beam design for the non-rigid mechanism is summarized below:
 - **Performance:** Deflection remains below 2% of the beam length while minimizing beam mass
 
 A drawing of the beam cross-section and its integration within the mechanism is shown below:
+
 ![Beam Deflection Diagram](/assets/images/Linear_Actuator_Diagram_Bending.png)
