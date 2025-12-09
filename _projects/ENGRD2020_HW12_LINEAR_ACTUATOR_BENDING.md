@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Linear Actuator Bending Analysis - Homework 12
+title: Linear Actuator - Homework 12
 description: Statics class project
 technologies: [python]
 image: /assets/images/Linear_Actuator_Diagram.png

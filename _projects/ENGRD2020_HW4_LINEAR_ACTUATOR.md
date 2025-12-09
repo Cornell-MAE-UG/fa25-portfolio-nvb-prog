@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Linear Actuator Analysis - Homework 4
+title: Linear Actuator - Homework 4
 description: Statics class project
 technologies: [python]
 image: /assets/images/Linear_Actuator_Diagram.png
