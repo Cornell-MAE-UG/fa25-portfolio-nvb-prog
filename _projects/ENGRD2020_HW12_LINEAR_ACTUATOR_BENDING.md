@@ -160,4 +160,4 @@ The final beam design for the non-rigid mechanism is summarized below:
 
 A drawing of the beam cross-section and its integration within the mechanism is shown below:
 
-![Beam Deflection Diagram](/assets/images/Linear_Actuator_Diagram_Bending.png)
+![Beam Deflection Diagram](/assets/images/Linear_Actuator_Diagram_Bending.jpeg)
